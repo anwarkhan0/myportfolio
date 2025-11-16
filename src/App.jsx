@@ -396,7 +396,7 @@ const Portfolio = () => {
                   }`}
                 >
                   <Linkedin className="w-6 h-6 text-purple-500" />
-                  <span>linkedin.com/in/alexchen</span>
+                  <span>linkedin.com/in/SyedAnwar</span>
                 </a>
               </div>
             </div>
