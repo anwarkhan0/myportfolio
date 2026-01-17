@@ -45,43 +45,43 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack marketplace with real-time inventory, payment integration, and admin dashboard.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
-      github: '#',
+      title: 'Bizroutes',
+      description: 'Api to collect business information from different sites.',
+      tech: ['Playwright', 'Node.js', 'langchain', 'OpenAI'],
+      image: 'https://media.istockphoto.com/id/638510752/photo/business-decision-concept.jpg?s=1024x1024&w=is&k=20&c=szFB5NXja2k_U05OiHIeeOQfx4oUMglpK_BBRDV_SZU=',
+      github: 'https://github.com/anwarkhan0/route-scraping',
       demo: '#'
     },
     {
-      title: 'AI Task Manager',
-      description: 'Smart productivity app with AI-powered task prioritization and natural language processing.',
-      tech: ['Next.js', 'OpenAI', 'Prisma', 'PostgreSQL'],
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop',
-      github: '#',
+      title: 'Restaurant Web App',
+      description: 'Displaying restaurant Dishes and ordering web application.',
+      tech: ['Reactjs',],
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      github: 'https://github.com/anwarkhan0/dada-foods',
       demo: '#'
     },
     {
-      title: 'Real-Time Analytics Dashboard',
-      description: 'Live data visualization platform with WebSocket streaming and interactive charts.',
-      tech: ['React', 'D3.js', 'Socket.io', 'Express'],
+      title: 'Api for Medical Service',
+      description: 'Complete backend API for managing medical services, appointments, and patient records. includes authentication, data validation, rate limiting, and comprehensive documentation. and error handling.',
+      tech: ['Nodejs', 'swagger', 'expressjs'],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
-      github: '#',
+      github: 'https://github.com/anwarkhan0/hasan_medics_api',
       demo: '#'
     },
     {
-      title: 'Social Media API',
-      description: 'RESTful API with authentication, rate limiting, and comprehensive documentation.',
+      title: 'Student Wizard App',
+      description: 'Student wizard a tool to help find a best suitable university for students based on their preferences and academic profile and visa requirements.',
       tech: ['Node.js', 'Express', 'JWT', 'Redis'],
-      image: 'https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=800&h=500&fit=crop',
-      github: '#',
+      image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      github: 'https://github.com/anwarkhan0/students-wizard',
       demo: '#'
     },
     {
       title: 'DevOps Pipeline Tool',
       description: 'CI/CD automation tool with Docker integration and deployment monitoring.',
-      tech: ['Python', 'Docker', 'AWS', 'GitHub Actions'],
-      image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&h=500&fit=crop',
-      github: '#',
+      tech: ['Nodejs', 'Docker', 'AWS', 'GitHub Actions'],
+      image: 'https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      github: 'https://github.com/anwarkhan0/deploy_on_aws_CICD',
       demo: '#'
     },
     {
@@ -223,11 +223,13 @@ const Portfolio = () => {
             
             <div>
               <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                Hey there! I'm a passionate full-stack developer with 5+ years of experience building web applications that users love. I thrive on turning complex problems into elegant, scalable solutions.
+                I’m a full-stack developer with solid hands-on experience building and maintaining web applications. I focus on writing clean, functional code that solves real problems without overengineering. I prefer practical solutions, clear requirements, and systems that are easy to maintain rather than chasing every new trend.
+
               </p>
               
               <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                When I'm not coding, you'll find me contributing to open source, writing technical blog posts, or exploring the latest frameworks and tools in the ever-evolving world of web development.
+                
+I work best when expectations are clear, the goal is defined, and the result actually matters. I’m not interested in buzzwords or pretending to be busy—I care about shipping working features, fixing real issues, and improving systems where it makes sense.
               </p>
               
               <div>
