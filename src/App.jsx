@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Code2, Database, Cloud, Layers, Sparkles, ArrowRight, Menu, X } from 'lucide-react';
+'use client';
 
-import anwarImage from './assets/profile.png';
-import './index.css';
-const Portfolio = () => {
+import React, { useState, useEffect } from 'react';
+import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Code2, Database, Cloud, Layers, Sparkles, ArrowRight, Menu, X, Server, Shield } from 'lucide-react';
+import img from './assets/profile.png';
+export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,62 +37,71 @@ const Portfolio = () => {
   };
 
   const skills = [
-    { name: 'React', level: 90, icon: <Layers className="w-5 h-5" /> },
-    { name: 'Node.js', level: 85, icon: <Code2 className="w-5 h-5" /> },
-    { name: 'TypeScript', level: 88, icon: <Code2 className="w-5 h-5" /> },
-    { name: 'AWS', level: 75, icon: <Cloud className="w-5 h-5" /> },
-    { name: 'PostgreSQL', level: 80, icon: <Database className="w-5 h-5" /> },
-    { name: 'Docker', level: 78, icon: <Layers className="w-5 h-5" /> },
+    { name: 'Node.js', level: 90, icon: <Server className="w-5 h-5" />, category: 'Backend' },
+    { name: 'Express', level: 88, icon: <Code2 className="w-5 h-5" />, category: 'Backend' },
+    { name: 'PostgreSQL', level: 85, icon: <Database className="w-5 h-5" />, category: 'Backend' },
+    { name: 'MongoDB', level: 82, icon: <Database className="w-5 h-5" />, category: 'Backend' },
+    { name: 'React', level: 87, icon: <Layers className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'Next.js', level: 83, icon: <Layers className="w-5 h-5" />, category: 'Frontend' },
+    { name: 'REST APIs', level: 92, icon: <Cloud className="w-5 h-5" />, category: 'Backend' },
+    { name: 'JWT Auth', level: 88, icon: <Shield className="w-5 h-5" />, category: 'Backend' },
+    { name: 'Docker', level: 75, icon: <Cloud className="w-5 h-5" />, category: 'DevOps' },
   ];
 
   const projects = [
     {
-      title: 'Bizroutes',
-      description: 'Api to collect business information from different sites.',
-      tech: ['Playwright', 'Node.js', 'langchain', 'OpenAI'],
-      image: 'https://media.istockphoto.com/id/638510752/photo/business-decision-concept.jpg?s=1024x1024&w=is&k=20&c=szFB5NXja2k_U05OiHIeeOQfx4oUMglpK_BBRDV_SZU=',
-      github: 'https://github.com/anwarkhan0/route-scraping',
-      demo: '#'
+      title: 'Task Management System',
+      description: 'Built a role-based task management system with secure authentication, REST APIs, and relational database design. Features include user roles, task assignment, and real-time updates.',
+      tech: ['Node.js', 'PostgreSQL', 'React', 'JWT'],
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
+      github: 'https://github.com/syedanwar',
+      demo: '#',
+      highlights: ['Role-based access control', 'RESTful API design', 'Relational DB schema']
     },
     {
-      title: 'Restaurant Web App',
-      description: 'Displaying restaurant Dishes and ordering web application.',
-      tech: ['Reactjs',],
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      github: 'https://github.com/anwarkhan0/dada-foods',
-      demo: '#'
+      title: 'Authentication Service',
+      description: 'Implemented secure login/signup system with password hashing, JWT access & refresh tokens, and protected routes. Includes email verification and password reset functionality.',
+      tech: ['Node.js', 'MongoDB', 'JWT', 'Bcrypt'],
+      image: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&h=500&fit=crop',
+      github: 'https://github.com/syedanwar',
+      demo: '#',
+      highlights: ['Secure password hashing', 'Token refresh mechanism', 'Protected routes']
     },
     {
-      title: 'Api for Medical Service',
-      description: 'Complete backend API for managing medical services, appointments, and patient records. includes authentication, data validation, rate limiting, and comprehensive documentation. and error handling.',
-      tech: ['Nodejs', 'swagger', 'expressjs'],
+      title: 'Analytics Dashboard',
+      description: 'API-driven dashboard focused on data visualization and efficient frontend state handling. Displays real-time metrics with interactive charts and filtering capabilities.',
+      tech: ['React', 'Chart.js', 'REST API', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
-      github: 'https://github.com/anwarkhan0/hasan_medics_api',
-      demo: '#'
+      github: 'https://github.com/syedanwar',
+      demo: '#',
+      highlights: ['Real-time data visualization', 'Optimized API calls', 'Responsive design']
     },
     {
-      title: 'Student Wizard App',
-      description: 'Student wizard a tool to help find a best suitable university for students based on their preferences and academic profile and visa requirements.',
-      tech: ['Node.js', 'Express', 'JWT', 'Redis'],
-      image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      github: 'https://github.com/anwarkhan0/students-wizard',
-      demo: '#'
+      title: 'E-Commerce API',
+      description: 'Built a scalable REST API for e-commerce platform with product management, shopping cart, and order processing. Includes payment integration and inventory management.',
+      tech: ['Node.js', 'Express', 'PostgreSQL', 'Stripe'],
+      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
+      github: 'https://github.com/syedanwar',
+      demo: '#',
+      highlights: ['Payment gateway integration', 'Inventory tracking', 'Order management']
     },
     {
-      title: 'DevOps Pipeline Tool',
-      description: 'CI/CD automation tool with Docker integration and deployment monitoring.',
-      tech: ['Nodejs', 'Docker', 'AWS', 'GitHub Actions'],
-      image: 'https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      github: 'https://github.com/anwarkhan0/deploy_on_aws_CICD',
-      demo: '#'
+      title: 'Real-Time Chat Application',
+      description: 'WebSocket-based chat application with private messaging, group chats, and online status. Built with Socket.io for real-time bidirectional communication.',
+      tech: ['Node.js', 'Socket.io', 'MongoDB', 'React'],
+      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&h=500&fit=crop',
+      github: 'https://github.com/syedanwar',
+      demo: '#',
+      highlights: ['WebSocket implementation', 'Real-time messaging', 'User presence tracking']
     },
     {
-      title: 'Mobile Fitness App',
-      description: 'Cross-platform fitness tracker with workout plans and progress analytics.',
-      tech: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=500&fit=crop',
-      github: '#',
-      demo: '#'
+      title: 'Blog CMS Backend',
+      description: 'Content management system backend with CRUD operations, image uploads, and rich text editing. Includes SEO optimization and content scheduling features.',
+      tech: ['Node.js', 'Express', 'MongoDB', 'Cloudinary'],
+      image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=500&fit=crop',
+      github: 'https://github.com/syedanwar',
+      demo: '#',
+      highlights: ['File upload handling', 'Content scheduling', 'SEO-friendly URLs']
     }
   ];
 
@@ -128,7 +139,6 @@ const Portfolio = () => {
               {darkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-gray-700" />}
             </button>
             
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 rounded-lg"
@@ -173,11 +183,11 @@ const Portfolio = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl mb-4 font-semibold">
-            Full Stack Web Developer
+            Software Engineer | Backend & Full-Stack Developer
           </p>
           
           <p className={`text-lg md:text-xl mb-12 max-w-2xl mx-auto ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Crafting elegant solutions to complex problems. Specialized in building scalable web applications with modern technologies and clean architecture.
+            I build scalable web applications with secure APIs, clean architecture, and production-ready deployments. I focus on backend systems, performance, and solving real business problems.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -185,7 +195,7 @@ const Portfolio = () => {
               onClick={() => scrollToSection('projects')}
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
             >
-              View My Work
+              View Projects
               <ArrowRight className="w-5 h-5" />
             </button>
             <button
@@ -212,9 +222,9 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="w-64 h-64 mx-auto rounded-3xl overflow-hidden border-4 border-purple-500 shadow-xl shadow-purple-500/30">
-                 <img 
-                  src={anwarImage} 
-                  alt="Profile"
+                <img 
+                  src={img} 
+                  alt="Syed Anwar"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -223,30 +233,32 @@ const Portfolio = () => {
             
             <div>
               <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                I’m a full-stack developer with solid hands-on experience building and maintaining web applications. I focus on writing clean, functional code that solves real problems without overengineering. I prefer practical solutions, clear requirements, and systems that are easy to maintain rather than chasing every new trend.
-
+                I'm a backend-focused software engineer with a passion for building robust, scalable systems. With expertise in Node.js, databases, and API design, I create solutions that are both efficient and maintainable.
               </p>
               
               <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                
-I work best when expectations are clear, the goal is defined, and the result actually matters. I’m not interested in buzzwords or pretending to be busy—I care about shipping working features, fixing real issues, and improving systems where it makes sense.
+                My approach combines clean code principles with practical problem-solving. Whether it's designing a secure authentication system or optimizing database queries, I focus on delivering production-ready solutions that scale.
               </p>
               
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-purple-500">Tech Stack</h3>
-                <div className="flex flex-wrap gap-3">
-                  {['React', 'Node.js', 'TypeScript', 'Next.js', 'AWS', 'Docker', 'PostgreSQL', 'MongoDB', 'GraphQL', 'Tailwind CSS'].map((tech) => (
-                    <span
-                      key={tech}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                        darkMode 
-                          ? 'bg-gray-700 text-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white' 
-                          : 'bg-gray-200 text-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white'
-                      } transition-all cursor-pointer`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <h3 className="text-xl font-semibold mb-4 text-purple-500">Core Technologies</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <p className="font-semibold mb-1">Backend</p>
+                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Node.js, Express, REST APIs</p>
+                  </div>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <p className="font-semibold mb-1">Database</p>
+                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>PostgreSQL, MongoDB</p>
+                  </div>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <p className="font-semibold mb-1">Frontend</p>
+                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>React, Next.js</p>
+                  </div>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <p className="font-semibold mb-1">DevOps</p>
+                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Docker, Git, Vercel</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -271,20 +283,24 @@ I work best when expectations are clear, the goal is defined, and the result act
                     : 'bg-white shadow-lg hover:shadow-purple-200'
                 }`}
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
+              
                 
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                  <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`mb-4 text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     {project.description}
                   </p>
+                  
+                  <div className="mb-4">
+                    <p className={`text-xs font-semibold mb-2 ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>KEY FEATURES</p>
+                    <ul className="space-y-1">
+                      {project.highlights.map((highlight, i) => (
+                        <li key={i} className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                          • {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, i) => (
@@ -302,6 +318,8 @@ I work best when expectations are clear, the goal is defined, and the result act
                   <div className="flex gap-4">
                     <a
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`flex items-center gap-2 ${darkMode ? 'text-gray-400 hover:text-purple-400' : 'text-gray-600 hover:text-purple-600'} transition-colors`}
                     >
                       <Github className="w-5 h-5" />
@@ -309,6 +327,8 @@ I work best when expectations are clear, the goal is defined, and the result act
                     </a>
                     <a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`flex items-center gap-2 ${darkMode ? 'text-gray-400 hover:text-purple-400' : 'text-gray-600 hover:text-purple-600'} transition-colors`}
                     >
                       <ExternalLink className="w-5 h-5" />
@@ -324,27 +344,82 @@ I work best when expectations are clear, the goal is defined, and the result act
 
       {/* Skills Section */}
       <section id="skills" className={`py-20 px-6 ${darkMode ? 'bg-gray-800/50' : 'bg-white'}`}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
             Skills & Expertise
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
-              <div key={index}>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="text-purple-500">{skill.icon}</div>
-                    <span className="font-semibold text-lg">{skill.name}</span>
+              <div
+                key={index}
+                className={`group relative p-8 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer ${
+                  darkMode 
+                    ? 'bg-gradient-to-br from-gray-800 to-gray-900 hover:from-purple-900/50 hover:to-blue-900/50 shadow-lg shadow-purple-500/10 hover:shadow-purple-500/30' 
+                    : 'bg-gradient-to-br from-white to-gray-50 hover:from-purple-50 hover:to-blue-50 shadow-lg hover:shadow-purple-200'
+                } border ${darkMode ? 'border-gray-700 hover:border-purple-500/50' : 'border-gray-200 hover:border-purple-300'}`}
+              >
+                <div className="flex justify-center mb-4">
+                  <div className={`p-4 rounded-2xl transition-all duration-300 ${
+                    darkMode 
+                      ? 'bg-purple-500/20 group-hover:bg-purple-500/30' 
+                      : 'bg-purple-100 group-hover:bg-purple-200'
+                  }`}>
+                    <div className="text-purple-500 transform group-hover:scale-110 transition-transform duration-300">
+                      {skill.icon}
+                    </div>
                   </div>
-                  <span className="text-purple-500 font-semibold">{skill.level}%</span>
                 </div>
-                <div className={`h-3 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                  <div
-                    className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
+                
+                <h3 className="text-center font-bold text-lg mb-2 group-hover:text-purple-500 transition-colors">
+                  {skill.name}
+                </h3>
+                
+                <p className={`text-center text-xs mb-3 ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+                  {skill.category}
+                </p>
+                
+                <div className="flex justify-center">
+                  <div className="relative w-20 h-20">
+                    <svg className="transform -rotate-90 w-20 h-20">
+                      <circle
+                        cx="40"
+                        cy="40"
+                        r="32"
+                        stroke="currentColor"
+                        strokeWidth="6"
+                        fill="transparent"
+                        className={darkMode ? 'text-gray-700' : 'text-gray-200'}
+                      />
+                      <circle
+                        cx="40"
+                        cy="40"
+                        r="32"
+                        stroke="url(#gradient)"
+                        strokeWidth="6"
+                        fill="transparent"
+                        strokeDasharray={`${2 * Math.PI * 32}`}
+                        strokeDashoffset={`${2 * Math.PI * 32 * (1 - skill.level / 100)}`}
+                        className="transition-all duration-1000 ease-out"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-sm font-bold text-purple-500">{skill.level}%</span>
+                    </div>
+                  </div>
                 </div>
+                
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#A855F7" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 -z-10 blur-xl"></div>
               </div>
             ))}
           </div>
@@ -361,12 +436,12 @@ I work best when expectations are clear, the goal is defined, and the result act
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                Have a project in mind or want to collaborate? I'm always open to discussing new opportunities and innovative ideas. Drop me a message!
+                Looking for a backend developer who can build scalable, secure systems? Let's connect and discuss how I can help bring your project to life.
               </p>
               
               <div className="space-y-4">
                 <a
-                  href="mailto:ianwarsyed@gmail.com"
+                  href="mailto:syedanwar.dev@email.com"
                   className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
                     darkMode 
                       ? 'bg-gray-800 hover:bg-gray-700' 
@@ -374,11 +449,13 @@ I work best when expectations are clear, the goal is defined, and the result act
                   }`}
                 >
                   <Mail className="w-6 h-6 text-purple-500" />
-                  <span>ianwarsyed@gmail.com</span>
+                  <span>syedanwar.dev@email.com</span>
                 </a>
                 
                 <a
-                  href="https://github.com/anwarkhan0"
+                  href="https://github.com/syedanwar"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
                     darkMode 
                       ? 'bg-gray-800 hover:bg-gray-700' 
@@ -386,11 +463,13 @@ I work best when expectations are clear, the goal is defined, and the result act
                   }`}
                 >
                   <Github className="w-6 h-6 text-purple-500" />
-                  <span>github.com/anwarkhan0</span>
+                  <span>github.com/syedanwar</span>
                 </a>
                 
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/syedanwar"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
                     darkMode 
                       ? 'bg-gray-800 hover:bg-gray-700' 
@@ -398,7 +477,7 @@ I work best when expectations are clear, the goal is defined, and the result act
                   }`}
                 >
                   <Linkedin className="w-6 h-6 text-purple-500" />
-                  <span>linkedin.com/in/SyedAnwar000</span>
+                  <span>linkedin.com/in/syedanwar</span>
                 </a>
               </div>
             </div>
@@ -437,7 +516,7 @@ I work best when expectations are clear, the goal is defined, and the result act
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  alert('Message sent! (This is a demo)');
+                  alert('Message sent! (This is a demo - integrate with your preferred email service)');
                 }}
                 className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105"
               >
@@ -452,12 +531,10 @@ I work best when expectations are clear, the goal is defined, and the result act
       <footer className={`py-8 px-6 border-t ${darkMode ? 'border-gray-800' : 'border-gray-200'}`}>
         <div className="max-w-7xl mx-auto text-center">
           <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
-            © 2025 Syed Anwar. Built with React & Tailwind CSS.
+            © 2026 Syed Anwar. Built with Next.js & Tailwind CSS.
           </p>
         </div>
       </footer>
     </div>
   );
-};
-
-export default Portfolio;
+}
