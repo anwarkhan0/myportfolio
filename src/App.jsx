@@ -48,62 +48,86 @@ export default function Portfolio() {
     { name: 'Docker', level: 75, icon: <Cloud className="w-5 h-5" />, category: 'DevOps' },
   ];
 
-  const projects = [
-    {
-      title: 'Task Management System',
-      description: 'Built a role-based task management system with secure authentication, REST APIs, and relational database design. Features include user roles, task assignment, and real-time updates.',
-      tech: ['Node.js', 'PostgreSQL', 'React', 'JWT'],
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
-      github: 'https://github.com/syedanwar',
-      demo: '#',
-      highlights: ['Role-based access control', 'RESTful API design', 'Relational DB schema']
-    },
-    {
-      title: 'Authentication Service',
-      description: 'Implemented secure login/signup system with password hashing, JWT access & refresh tokens, and protected routes. Includes email verification and password reset functionality.',
-      tech: ['Node.js', 'MongoDB', 'JWT', 'Bcrypt'],
-      image: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&h=500&fit=crop',
-      github: 'https://github.com/syedanwar',
-      demo: '#',
-      highlights: ['Secure password hashing', 'Token refresh mechanism', 'Protected routes']
-    },
-    {
-      title: 'Analytics Dashboard',
-      description: 'API-driven dashboard focused on data visualization and efficient frontend state handling. Displays real-time metrics with interactive charts and filtering capabilities.',
-      tech: ['React', 'Chart.js', 'REST API', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
-      github: 'https://github.com/syedanwar',
-      demo: '#',
-      highlights: ['Real-time data visualization', 'Optimized API calls', 'Responsive design']
-    },
-    {
-      title: 'E-Commerce API',
-      description: 'Built a scalable REST API for e-commerce platform with product management, shopping cart, and order processing. Includes payment integration and inventory management.',
-      tech: ['Node.js', 'Express', 'PostgreSQL', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
-      github: 'https://github.com/syedanwar',
-      demo: '#',
-      highlights: ['Payment gateway integration', 'Inventory tracking', 'Order management']
-    },
-    {
-      title: 'Real-Time Chat Application',
-      description: 'WebSocket-based chat application with private messaging, group chats, and online status. Built with Socket.io for real-time bidirectional communication.',
-      tech: ['Node.js', 'Socket.io', 'MongoDB', 'React'],
-      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&h=500&fit=crop',
-      github: 'https://github.com/syedanwar',
-      demo: '#',
-      highlights: ['WebSocket implementation', 'Real-time messaging', 'User presence tracking']
-    },
-    {
-      title: 'Blog CMS Backend',
-      description: 'Content management system backend with CRUD operations, image uploads, and rich text editing. Includes SEO optimization and content scheduling features.',
-      tech: ['Node.js', 'Express', 'MongoDB', 'Cloudinary'],
-      image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=500&fit=crop',
-      github: 'https://github.com/syedanwar',
-      demo: '#',
-      highlights: ['File upload handling', 'Content scheduling', 'SEO-friendly URLs']
-    }
-  ];
+const projects = [
+  {
+    title: 'Scalable Multi-Tenant SaaS Backend',
+    description: 'Designed and built a multi-tenant backend system supporting isolated customer environments with role-based access control, rate limiting, and tenant-aware database architecture. Implemented caching and background jobs for high performance under load.',
+    tech: ['Node.js', 'PostgreSQL', 'Redis', 'AWS', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
+    github: 'https://github.com/syedanwar',
+    demo: '#',
+    highlights: [
+      'Multi-tenant architecture (tenant isolation)',
+      'Redis caching + rate limiting',
+      'Background jobs with queues (BullMQ)'
+    ]
+  },
+  {
+    title: 'Production-Grade Authentication & Authorization System',
+    description: 'Engineered a secure authentication system with JWT access/refresh tokens, rotating refresh tokens, RBAC, and account security features. Designed for production with audit logging and attack protection mechanisms.',
+    tech: ['Node.js', 'MongoDB', 'JWT', 'Redis'],
+    image: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&h=500&fit=crop',
+    github: 'https://github.com/syedanwar',
+    demo: '#',
+    highlights: [
+      'Refresh token rotation & session management',
+      'RBAC & permission system',
+      'Brute-force protection & audit logs'
+    ]
+  },
+  {
+    title: 'High-Performance API with Caching & Load Optimization',
+    description: 'Built a high-performance REST API optimized for heavy traffic using Redis caching, query optimization, and pagination strategies. Reduced response time and database load significantly.',
+    tech: ['Node.js', 'PostgreSQL', 'Redis', 'Express'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+    github: 'https://github.com/syedanwar',
+    demo: '#',
+    highlights: [
+      'Redis caching strategies',
+      'Database query optimization',
+      'Pagination & rate limiting'
+    ]
+  },
+  {
+    title: 'Event-Driven E-Commerce Backend (Microservices)',
+    description: 'Designed an event-driven e-commerce backend using microservices architecture. Implemented order processing, payment workflows, and inventory updates using message queues.',
+    tech: ['Node.js', 'PostgreSQL', 'RabbitMQ', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
+    github: 'https://github.com/syedanwar',
+    demo: '#',
+    highlights: [
+      'Event-driven architecture',
+      'Message queues (RabbitMQ)',
+      'Service-to-service communication'
+    ]
+  },
+  {
+    title: 'Real-Time Notification System (WebSockets + Queue)',
+    description: 'Developed a scalable real-time notification system using WebSockets and message queues. Supports live updates, user presence, and background job processing.',
+    tech: ['Node.js', 'Socket.io', 'Redis', 'BullMQ'],
+    image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&h=500&fit=crop',
+    github: 'https://github.com/syedanwar',
+    demo: '#',
+    highlights: [
+      'WebSocket scalability patterns',
+      'Queue-based async processing',
+      'User presence tracking'
+    ]
+  },
+  {
+    title: 'Cloud-Deployed Backend (AWS Production Setup)',
+    description: 'Deployed a production-ready backend on AWS with CI/CD pipeline, Docker containers, Nginx reverse proxy, and HTTPS setup. Implemented logging, monitoring, and environment-based configuration.',
+    tech: ['AWS', 'Docker', 'Nginx', 'Node.js', 'CI/CD'],
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=500&fit=crop',
+    github: 'https://github.com/syedanwar',
+    demo: '#',
+    highlights: [
+      'AWS deployment (EC2, S3)',
+      'CI/CD pipeline setup',
+      'Nginx + HTTPS configuration'
+    ]
+  }
+];
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
